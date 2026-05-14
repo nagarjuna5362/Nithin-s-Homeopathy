@@ -1,56 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
-  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nithin's Homeopathy – 8 Week Couple Fertility Program by Dr. Divya &amp; Dr. Praveen | Homeopathy + Fertility Tracking + Couple Support">
-    <meta name="description" content="Nithin's Homeopathy � 8 Week Couple Fertility Program by Dr. Divya &amp; Dr. Praveen | Homeopathy + Fertility Tracking + Couple Support">
-    <title>Nithin's Homeopathy � 8 Week Couple Fertility Program</title>
-    <!-- META PIXEL — Visshal's marketing promotions -->
-    <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js",
-      );
-      window.fbq = window.fbq || function () {};
-      // fbq('init','YOUR_PIXEL_ID'); // Replace with actual pixel ID
-      // fbq('track','PageView');
-    </script>
 
-    <!-- GOOGLE ANALYTICS 4 — Sarthak's ad campaign analysis -->
+    <!-- Primary Meta Tags -->
+    <title>LumiNest | Premium 8-Week Fertility & Couple Wellness Program</title>
+    <meta name="title" content="LumiNest | Premium 8-Week Fertility & Couple Wellness Program">
+    <meta name="description" content="Experience compassionate fertility care with Dr. Divya & Dr. Praveen. A proven homeopathic and cycle-tracking approach designed for couples.">
+    <meta name="keywords" content="fertility, homeopathy, couple wellness, trying to conceive, women's health, natural fertility, pregnancy support, fertility clinic">
+    <link rel="canonical" href="https://nithin-s-homeopathy.onrender.com/">
+
+    <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nithin-s-homeopathy.onrender.com/">
+    <meta property="og:title" content="LumiNest | Premium 8-Week Fertility & Couple Wellness Program">
+    <meta property="og:description" content="Experience compassionate fertility care with Dr. Divya & Dr. Praveen. A proven homeopathic and cycle-tracking approach designed for couples.">
+    <meta property="og:image" content="https://nithin-s-homeopathy.onrender.com/preview.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://nithin-s-homeopathy.onrender.com/">
+    <meta name="twitter:title" content="LumiNest | Premium 8-Week Fertility & Couple Wellness Program">
+    <meta name="twitter:description" content="Experience compassionate fertility care with Dr. Divya & Dr. Praveen. A proven homeopathic and cycle-tracking approach designed for couples.">
+    <meta name="twitter:image" content="https://nithin-s-homeopathy.onrender.com/preview.jpg">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HFF57FQTT7"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      // gtag('js',new Date()); gtag('config','G-XXXXXXXXXX');
-      window._gaEnabled = false;
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-HFF57FQTT7');
+      window._gaEnabled = true;
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
       :root {
@@ -2425,9 +2412,6 @@
 </head>
 <body>
 
-</head>
-<body>
-
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   
   
@@ -3513,15 +3497,75 @@
         console.log("[Meta Pixel]", ev, d || {});
       }
 
-      /* ═══ GA4 — Sarthak's campaign analysis ═══ */
+      
+      /* ═══ GA4 EVENT TRACKING FUNCTIONS ═══ */
+      function trackWebinarRegistration(data) {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'webinar_registration', {
+            method: 'form',
+            utm_source: data.utm_source || sessionStorage.getItem('utm_source') || 'direct',
+            utm_medium: data.utm_medium || sessionStorage.getItem('utm_medium') || '',
+            utm_campaign: data.utm_campaign || sessionStorage.getItem('utm_campaign') || ''
+          });
+        }
+        console.log('[GA4] webinar_registration', data);
+      }
+
+      function trackEnrollClick(plan, label) {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'enroll_click', {
+            plan: plan || 'unknown',
+            cta_label: label || 'enroll',
+            utm_source: sessionStorage.getItem('utm_source') || 'direct',
+            utm_medium: sessionStorage.getItem('utm_medium') || '',
+            utm_campaign: sessionStorage.getItem('utm_campaign') || ''
+          });
+        }
+        console.log('[GA4] enroll_click', plan, label);
+      }
+
+      function trackPaymentInitiated(plan, amount) {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'payment_initiated', {
+            plan: plan,
+            value: amount,
+            currency: 'INR',
+            utm_source: sessionStorage.getItem('utm_source') || 'direct',
+            utm_medium: sessionStorage.getItem('utm_medium') || '',
+            utm_campaign: sessionStorage.getItem('utm_campaign') || ''
+          });
+        }
+        console.log('[GA4] payment_initiated', plan);
+      }
+
+      function trackPaymentComplete(plan, amount, orderId) {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'payment_complete', {
+            plan: plan,
+            value: amount,
+            currency: 'INR',
+            transaction_id: orderId,
+            utm_source: sessionStorage.getItem('utm_source') || 'direct',
+            utm_medium: sessionStorage.getItem('utm_medium') || '',
+            utm_campaign: sessionStorage.getItem('utm_campaign') || ''
+          });
+        }
+        console.log('[GA4] payment_complete', plan, amount, orderId);
+      }
+
       function tGA(ev, p) {
-        if (typeof gtag !== "undefined" && window._gaEnabled)
-          gtag("event", ev, p || {});
+        if (typeof gtag !== 'undefined' && window._gaEnabled) gtag('event', ev, p || {});
+        console.log('[GA4]', ev, p || {});
+      }
+);
         console.log("[GA4]", ev, p || {});
       }
 
       /* ═══ CTA TRACKING ═══ */
       function tCTA(label) {
+        if (label.includes('enroll') || label.includes('pay') || label.includes('pricing')) {
+          trackEnrollClick("unknown", label);
+        }
         tGA("cta_click", { cta_label: label });
         tPx("CustomEvent", { event_name: label });
         updateCounters(label);
@@ -3630,6 +3674,7 @@
       };
 
       function openPay(plan) {
+        trackEnrollClick(plan, "open_pay_modal");
         if (!window.currentUser) {
           window.pendingPlanToBuy = plan;
           document.getElementById('auth-modal').style.display = 'flex';
@@ -3717,6 +3762,13 @@
             email: e,
             phone: ph,
             area: area,
+            utm: {
+              source: sessionStorage.getItem("utm_source") || "direct",
+              medium: sessionStorage.getItem("utm_medium") || "",
+              campaign: sessionStorage.getItem("utm_campaign") || "",
+              content: sessionStorage.getItem("utm_content") || "",
+              term: sessionStorage.getItem("utm_term") || "",
+            }
           }),
         })
           .then(function (res) {
@@ -3757,6 +3809,7 @@
                   .then(async function () {
                     showPS("psOk");
                     updateCounters("payment_success");
+                    trackPaymentComplete(curPlan, PRICES[curPlan], response.razorpay_order_id);
                     
                     // Save to Firestore
                     if (window.currentUser && window.firebaseDb) {
@@ -3825,6 +3878,7 @@
               showPS("psFail");
               tGA("payment_failed", { plan: curPlan });
             });
+            trackPaymentInitiated(curPlan, PRICES[curPlan]);
             rzp.open();
           })
           .catch(function (err) {
@@ -4049,10 +4103,7 @@
         console.log("[Webinar Registration → CRM/Webhook]", data);
         /* In production:
   fetch('https://hook.make.com/YOUR_WB_WEBHOOK',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}); */
-        tGA("webinar_registration", {
-          source: data.utm_source,
-          campaign: data.utm_campaign,
-        });
+        trackWebinarRegistration(data);
         tPx("Lead", { content_name: "Webinar Registration" });
         updateCounters("webinar_reg");
         alert(
